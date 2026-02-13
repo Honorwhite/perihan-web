@@ -1,13 +1,13 @@
 RewriteEngine On
-RewriteBase /
+RewriteBase /perihan/
 
-# Redirect index.html to /
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ / [R=301,L]
+# Redirect index.html to /perihan/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /perihan/index\.html\ HTTP/
+RewriteRule ^index\.html$ /perihan/ [R=301,L]
 
 # Redirect any .html page to its clean version
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP/
-RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /perihan/(.+)\.html\ HTTP/
+RewriteRule ^(.+)\.html$ /perihan/$1 [R=301,L]
 
 # Internal rewrite for clean URLs
 RewriteCond %{REQUEST_FILENAME} !-d
