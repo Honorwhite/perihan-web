@@ -2037,4 +2037,81 @@
         // $('#buy-now,#back-to-top ').hide();
     });
     
- })(jQuery);
+
+
+
+    $(document).ready(function() {
+        var mobileNav = `
+        <div id="mobile-floating-nav">
+            <a href="tel:03227707070" class="nav-item">
+                <i class="fa fa-phone"></i>
+                <span>Ara</span>
+            </a>
+            <a href="https://wa.me/903227707070" class="nav-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Özel+Güzelyalı+Hastanesi+Adana" target="_blank" class="nav-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Konum</span>
+            </a>
+        </div>
+        <style>
+            #mobile-floating-nav {
+                display: none;
+                position: fixed;
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+                height: 70px;
+                background: rgba(255, 255, 255, 0.96);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                justify-content: space-around;
+                align-items: center;
+                box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+                z-index: 9999;
+                border-radius: 15px;
+                border: 1px solid rgba(255,255,255,0.4);
+            }
+            .nav-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none !important;
+                color: #333 !important;
+                flex: 1;
+                height: 100%;
+                margin: 0 !important;
+                padding: 0 !important;
+                line-height: 1 !important;
+            }
+            .nav-item i {
+                font-size: 22px;
+                margin-bottom: 6px;
+                color: #8c5b3f;
+                display: block;
+                line-height: 1;
+            }
+            .nav-item span {
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                display: block;
+                line-height: 1;
+            }
+            @media (max-width: 767px) {
+                #mobile-floating-nav {
+                    display: flex;
+                }
+            }
+        </style>
+        `;
+        $('body').append(mobileNav);
+    });
+
+
+
+ })(jQuery);
