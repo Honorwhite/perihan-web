@@ -2049,7 +2049,7 @@
                     <div style="font-weight:700;font-size:14px;line-height:1.2;">Op. Dr. Perihan Göçer Ünal</div>
                     <div style="font-size:11px;color:#666;margin-top:2px;">Uygulamamızı telefonunuza kurun</div>
                 </div>
-                <button id="pwa-action-btn" style="background:#8c5b3f;border:none;color:white;padding:7px 15px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;margin-right:25px;">Kur</button>
+                <button id="pwa-action-btn" style="background:#8c5b3f;border:none;color:white;padding:7px 15px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;margin-right:25px;">Yükle</button>
                 <div id="pwa-close-btn" style="position:absolute;right:-5px;top:0px;padding:5px;cursor:pointer;color:#999;font-size:18px;">&times;</div>
             </div>
             <div id="ios-instruction" style="display:none;margin-top:10px;border-top:1px solid rgba(0,0,0,0.05);padding-top:10px;font-size:12px;color:#555;line-height:1.5;text-align:center;">
