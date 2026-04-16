@@ -2042,15 +2042,15 @@
 
     $(document).ready(function () {
         var mobileNav = `
-        <div id="pwa-install-banner" style="display:none;position:fixed;bottom:95px;left:15px;right:15px;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);color:#333;padding:12px;border-radius:15px;z-index:10000;box-shadow:0 10px 30px rgba(0,0,0,0.2);border:1px solid rgba(0,0,0,0.05);">
-            <div class="pwa-header" style="display:flex;align-items:center;gap:12px;position:relative;">
-                <img src="/web-app-manifest-192x192.png" style="width:45px;height:45px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <div id="pwa-install-banner" style="display:none;position:fixed;bottom:95px;left:15px;right:15px;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);color:#333;padding:8px 12px;border-radius:12px;z-index:10000;box-shadow:0 10px 30px rgba(0,0,0,0.2);border:1px solid rgba(0,0,0,0.05);">
+            <div class="pwa-header" style="display:flex;align-items:center;gap:10px;position:relative;">
+                <img src="/web-app-manifest-192x192.png" style="width:38px;height:38px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
                 <div style="flex:1;">
-                    <div style="font-weight:700;font-size:14px;line-height:1.2;">Op. Dr. Perihan Göçer Ünal</div>
-                    <div style="font-size:11px;color:#666;margin-top:2px;">Uygulamamızı telefonunuza kurun</div>
+                    <div style="font-weight:700;font-size:13px;line-height:1.2;">Op. Dr. Perihan Göçer Ünal</div>
+                    <div style="font-size:10px;color:#666;margin-top:1px;">Uygulamamızı telefonunuza kurun</div>
                 </div>
-                <button id="pwa-action-btn" style="background:#8c5b3f;border:none;color:white;padding:7px 15px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;margin-right:25px;">Yükle</button>
-                <div id="pwa-close-btn" style="position:absolute;right:-5px;top:0px;padding:5px;cursor:pointer;color:#999;font-size:18px;">&times;</div>
+                <button id="pwa-action-btn" style="background:#8c5b3f;border:none;color:white;padding:5px 12px;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer;margin-right:20px;">Yükle</button>
+                <div id="pwa-close-btn" style="position:absolute;right:-5px;top:-2px;padding:5px;cursor:pointer;color:#999;font-size:18px;">&times;</div>
             </div>
             <div id="ios-instruction" style="display:none;margin-top:10px;border-top:1px solid rgba(0,0,0,0.05);padding-top:10px;font-size:12px;color:#555;line-height:1.5;text-align:center;">
                 Paylaş <i class="fa-solid fa-arrow-up-from-bracket"></i> simgesine basıp <br><strong>"Ana Ekrana Ekle"</strong> seçeneğini seçin.
@@ -2058,15 +2058,15 @@
         </div>
 
         <div id="mobile-floating-nav">
-            <a href="tel:03227707070" class="nav-item">
+            <a href="tel:03227707070" class="m-nav-item">
                 <i class="fa fa-phone"></i>
                 <span>Ara</span>
             </a>
-            <a href="https://wa.me/903227707070" class="nav-item">
+            <a href="https://wa.me/903227707070" class="m-nav-item">
                 <i class="fa-brands fa-whatsapp"></i>
                 <span>WhatsApp</span>
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Özel+Güzelyalı+Hastanesi+Adana" target="_blank" class="nav-item">
+            <a href="https://www.google.com/maps/search/?api=1&query=Özel+Güzelyalı+Hastanesi+Adana" target="_blank" class="m-nav-item">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>Konum</span>
             </a>
@@ -2089,7 +2089,7 @@
                 border-radius: 15px;
                 border: 1px solid rgba(255,255,255,0.4);
             }
-            .nav-item {
+            .m-nav-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -2102,14 +2102,14 @@
                 padding: 0 !important;
                 line-height: 1 !important;
             }
-            .nav-item i {
+            .m-nav-item i {
                 font-size: 22px;
                 margin-bottom: 6px;
                 color: #8c5b3f;
                 display: block;
                 line-height: 1;
             }
-            .nav-item span {
+            .m-nav-item span {
                 font-size: 10px;
                 font-weight: 700;
                 text-transform: uppercase;
@@ -2129,16 +2129,8 @@
         // PWA Logic - Sadece ana sayfada ve mobilde
         var isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.endsWith('index.html');
         var bannerClosed = localStorage.getItem('pwa_banner_closed');
-        var bannerClosedTime = localStorage.getItem('pwa_banner_closed_time');
-
-        // Eğer kapatılmışsa ve üzerinden 7 gün geçmemişse gösterme
-        var shouldShow = true;
-        if (bannerClosedTime) {
-            var diff = Date.now() - parseInt(bannerClosedTime);
-            if (diff < (7 * 24 * 60 * 60 * 1000)) { // 7 gün
-                shouldShow = false;
-            }
-        }
+        
+        var shouldShow = !bannerClosed; 
 
         if (isHomePage && window.innerWidth <= 767 && shouldShow) {
             var deferredPrompt;
@@ -2147,7 +2139,7 @@
 
             $('#pwa-close-btn').click(function () {
                 $('#pwa-install-banner').fadeOut();
-                localStorage.setItem('pwa_banner_closed_time', Date.now());
+                localStorage.setItem('pwa_banner_closed', 'true');
             });
 
             if (isIOS && isSafari) {
@@ -2171,7 +2163,7 @@
                         deferredPrompt.userChoice.then(function (choiceResult) {
                             if (choiceResult.outcome === 'accepted') {
                                 $('#pwa-install-banner').fadeOut();
-                                localStorage.setItem('pwa_banner_closed_time', Date.now());
+                                localStorage.setItem('pwa_banner_closed', 'true');
                             }
                             deferredPrompt = null;
                         });
