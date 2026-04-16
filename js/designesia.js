@@ -2129,8 +2129,8 @@
         // PWA Logic - Sadece ana sayfada ve mobilde
         var isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.endsWith('index.html');
         var bannerClosed = localStorage.getItem('pwa_banner_closed');
-        
-        var shouldShow = !bannerClosed; 
+
+        var shouldShow = !bannerClosed;
 
         if (isHomePage && window.innerWidth <= 767 && shouldShow) {
             var deferredPrompt;
