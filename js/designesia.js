@@ -501,6 +501,29 @@
             }
         });
 
+        jQuery("#comment-carousel").owlCarousel({
+            center: false,
+            loop: true,
+            margin: 25,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: true,
+            responsive: {
+                1200: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                },
+                600: {
+                    items: 2
+                },
+                0: {
+                    items: 1
+                }
+            }
+        });
+
         jQuery("#blog-carousel").owlCarousel({
             center: false,
             items: 3,
