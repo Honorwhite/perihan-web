@@ -241,7 +241,7 @@
                                                             aşamasında, gebelik takibi, doğum, genital estetik ve
                                                             jinekolojik tedaviler konusunda uzman desteği.</p>
                                                         <div class="spacer-30"></div>
-                                                        <a class="btn-main mb10 mb-3" href="#hakkimda">Hakkımda
+                                                        <a class="btn-main mb10 mb-3" href="hakkimda">Hakkımda
                                                         </a>
                                                     </div>
                                                 </div>
@@ -284,7 +284,7 @@
                                                             gebelik takibi, doğum, genital estetik ve jinekolojik
                                                             ameliyatlar konusunda uzman bir doktor.</p>
                                                         <div class="spacer-30"></div>
-                                                        <a class="btn-main mb10 mb-3" href="#uzmanlik">Uzmanlık
+                                                        <a class="btn-main mb10 mb-3" href="uzmanlik">Uzmanlık
                                                             Alanlarım
                                                         </a>
                                                     </div>
@@ -593,8 +593,7 @@
                                             <div class="abs hover-op-1 z-4 hover-mt-40 abs-centered">
                                                 <div class="fs-14">Detaylı Bilgi</div>
                                                 <h3 class="fs-40 lh-1 mb-4">Pelvik Sağlık</h3>
-                                                <a class="btn-line"
-                                                    href="pelvik-saglik-ve-urojinekoloji">İncele</a>
+                                                <a class="btn-line" href="pelvik-saglik-ve-urojinekoloji">İncele</a>
                                             </div>
                                             <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1 rounded-up-100">
                                             </div>
@@ -669,8 +668,7 @@
                                             <div class="abs hover-op-1 z-4 hover-mt-40 abs-centered">
                                                 <div class="fs-14">Detaylı Bilgi</div>
                                                 <h3 class="fs-40 lh-1 mb-4">Gebelik Takibi ve Doğum</h3>
-                                                <a class="btn-line"
-                                                    href="gebelik-takibi-ve-dogum-uzmanlik">İncele</a>
+                                                <a class="btn-line" href="gebelik-takibi-ve-dogum-uzmanlik">İncele</a>
                                             </div>
                                             <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1 rounded-up-100">
                                             </div>
@@ -695,8 +693,7 @@
                                             <div class="abs hover-op-1 z-4 hover-mt-40 abs-centered">
                                                 <div class="fs-14">Detaylı Bilgi</div>
                                                 <h3 class="fs-40 lh-1 mb-4">Riskli Gebelikler</h3>
-                                                <a class="btn-line"
-                                                    href="riskli-gebelik-ve-ozel-dogumlar">İncele</a>
+                                                <a class="btn-line" href="riskli-gebelik-ve-ozel-dogumlar">İncele</a>
                                             </div>
                                             <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1 rounded-up-100">
                                             </div>
@@ -840,8 +837,7 @@
                                     </a>
                                 </div>
                                 <div class="pt-2 h-100">
-                                    <h4 class="mb-3 lh-1-4"><a class="text-dark"
-                                            href="gebelik-takibi-ve-dogum">Gebelik
+                                    <h4 class="mb-3 lh-1-4"><a class="text-dark" href="gebelik-takibi-ve-dogum">Gebelik
                                             Takibi ve Doğum: Bilinmesi
                                             Gerekenler</a></h4>
                                     <p class="mb-2">Adana'da gebelik takibi, yüksek riskli gebelik yönetimi ve doğum
@@ -1026,6 +1022,166 @@
 
                 <div class="container text-center mt-5">
                     <a href="yorumlar" class="btn-main">Tüm Yorumları Gör</a>
+                </div>
+            </section>
+
+            <section class="no-top lines-deco">
+                <style>
+                    #faqAccordion .card {
+                        border: none;
+                        margin-bottom: 15px;
+                        background: #fff;
+                        border-radius: 12px;
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                        overflow: hidden;
+                        transition: all 0.3s ease;
+                    }
+                    #faqAccordion .card:hover {
+                        box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+                        transform: translateY(-2px);
+                    }
+                    #faqAccordion .card-header {
+                        background: #fff;
+                        padding: 0;
+                        border: none;
+                    }
+                    #faqAccordion .faq-link {
+                        width: 100%;
+                        padding: 25px 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        text-decoration: none;
+                        color: #222;
+                        font-weight: 600;
+                        font-size: 18px;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        text-align: left;
+                    }
+                    #faqAccordion .faq-link:hover, 
+                    #faqAccordion .faq-link:not(.collapsed) {
+                        color: #ab8965; /* Sitenin altın/kahve tonu */
+                    }
+                    #faqAccordion .faq-link::after {
+                        content: '\2b'; /* Plus sign */
+                        font-family: "FontAwesome";
+                        font-size: 20px;
+                        color: #ccc;
+                        transition: all 0.3s ease;
+                    }
+                    #faqAccordion .faq-link:not(.collapsed)::after {
+                        content: '\2212'; /* Minus sign */
+                        color: #ab8965;
+                        transform: rotate(180deg);
+                    }
+                    #faqAccordion .card-body {
+                        padding: 0 30px 30px 30px;
+                        color: #555;
+                        font-size: 16px;
+                        line-height: 1.7;
+                    }
+                    /* Remove Bootstrap default btn styles if any */
+                    #faqAccordion .btn-link {
+                        text-decoration: none !important;
+                        box-shadow: none !important;
+                    }
+                </style>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 text-center">
+                            <div class="subtitle id-color wow fadeInUp mb-3">Bilgilendirme</div>
+                            <h2 class="wow fadeInUp">Sık Sorulan Sorular</h2>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mt-4">
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class="accordion" id="faqAccordion">
+
+                                <div class="card wow fadeInUp" data-wow-delay=".1s">
+                                    <div class="card-header" id="headingOne">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="faq-link" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">Biyoeşdeğer hormon tedavisi nasıl uygulanır?</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="card-body">
+                                            Son yıllarda menopoz yaşının çok düşmesi ve farkındalığın artması ile beraber biyoeşdeğer hormon tedavisi almak isteyen kadın sayısı oldukça arttı. Bu farkındalıktan da menopozla özel olarak ilgilenen bir hekim olarak çok memnunum. Çünkü kadın bedeninde östrojen çiçeğin suyu gibidir. Susuz kalan çiçek gibi; kadında östrojensiz solar ve kurur. Ruhu da, tahammülü de cinselliği de…. Biyoeşdeğer hormon tedavisi östrojeni cilt yoluyla krem formunda, diğer hormonları ise vajinal, cilt ya da oral olarak alınabilen bir tedavi şeklidir. Beraberinde hastanın ayrıntılı tetkikleri ve anamneziyle beraber eksik olan vitamin, mineral ya da desteklerin yerine konulmasını ve bir denge kurulması amaçlanır.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="card-header" id="headingTwo">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="faq-link collapsed"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">Kızlık zarı dikilmesi sonrası anlaşılır mı?</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="card-body">
+                                            Deneyimli bir hekim tarafından geçici ya da kalıcı kızlık zarı dikilmesi genellikle dışarıdan anlaşılması mümkün değildir. Fakat bu yüzde yüz olarak garanti olarak değerlendirilmemelidir.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="card-header" id="headingThree">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="faq-link collapsed"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">Kızlık zarı dikilmesi acılı bir işlem mi?</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="card-body">
+                                            Hayır değil. Lokal anestezi ile ya da hastanın isteğiyle sedasyon altında yapılabilecek günübirlik bir işlemdir.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="card-header" id="headingFour">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="faq-link collapsed"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">İç dudak estetiği (labioplasti) sonrası his kaybı olur mu?</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="card-body">
+                                            Deneyimli ehil ellerde doğru cerrahi teknikle yapıldığı zaman labioplasti sonrası his kaybı olmaz.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="card-header" id="headingFive">
+                                        <h6 class="mb-0">
+                                            <a href="#" class="faq-link collapsed"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                                aria-expanded="false" aria-controls="collapseFive">Vajinal daraltma sonrası ilişkide ağrı olur mu?</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="card-body">
+                                            Eğer ki daraltma miktarı fazla yapıldıysa ağrı oluşabilir. Fakat ideal yapılmış bir vajinoplasti sonrası rutinde cinsel ilişkide ağrı olmaz.
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
