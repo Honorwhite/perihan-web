@@ -2085,9 +2085,9 @@
                 <i class="fa fa-phone"></i>
                 <span>Ara</span>
             </a>
-            <a href="https://wa.me/903227707070" class="m-nav-item">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>WhatsApp</span>
+            <a href="https://www.instagram.com/op.dr.perigcrunal/" class="m-nav-item">
+                <i class="fa-brands fa-instagram"></i>
+                <span>İnstagram</span>
             </a>
             <a href="https://www.google.com/maps/search/?api=1&query=Özel+Güzelyalı+Hastanesi+Adana" target="_blank" class="m-nav-item">
                 <i class="fa-solid fa-location-dot"></i>
