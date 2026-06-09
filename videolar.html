@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilgilendirici Instagram Reels Videoları | Op. Dr. Perihan Göçer Ünal Adana</title>
+    <meta name="description"
+        content="Op. Dr. Perihan Göçer Ünal'dan gebelik takibi, doğum, genital estetik ve kadın sağlığı hakkında bilgilendirici Reels videoları ve video açıklamaları.">
+    <meta name="keywords"
+        content="kadın doğum videoları, genital estetik videoları adana, gebelik takibi reels, perihan göçer ünal instagram, adana jinekolog video">
+    <meta name="author" content="Op. Dr. Perihan Göçer Ünal">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://opdrperihangocerunal.com/videolar">
+    <meta property="og:title" content="Bilgilendirici Instagram Reels Videoları | Op. Dr. Perihan Göçer Ünal Adana">
+    <meta property="og:description"
+        content="Kadın sağlığı, gebelik, genital estetik ve jinekolojik cerrahi üzerine güncel bilgilendirici reels videoları.">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Op. Dr. Perihan Göçer Ünal" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <style>
+        /* Reels/Video Card Styling */
+        .reel-post {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #000;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: block;
+        }
+
+        .reel-post:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .reel-img-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9/16;
+            overflow: hidden;
+            display: block;
+        }
+
+        .reel-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .reel-post:hover .reel-img-container img {
+            transform: scale(1.05);
+        }
+
+        .reel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.4) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            z-index: 2;
+        }
+
+        .reel-post:hover .reel-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 60%, rgba(0, 0, 0, 0.65) 100%);
+        }
+
+        .reel-play-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #ab8965;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .reel-play-btn i {
+            margin-left: 3px;
+        }
+
+        .reel-post:hover .reel-play-btn {
+            transform: scale(1.1);
+            background-color: #ab8965;
+            color: #fff;
+        }
+
+        .reel-info {
+            padding: 18px 10px 10px 10px;
+            text-align: left;
+        }
+
+        .reel-tag {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ab8965;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .reel-title {
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .reel-title a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .reel-title a:hover {
+            color: #ab8965 !important;
+        }
+
+        .reel-desc {
+            font-size: 13.5px;
+            color: #666;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+
+        /* Filter Navigation Styling */
+        .reels-filter-nav a {
+            display: inline-block;
+            padding: 8px 24px;
+            background: #fff;
+            color: #222;
+            border: 1px solid #e0e0e0;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .reels-filter-nav a:hover,
+        .reels-filter-nav a.active {
+            background: #ab8965;
+            color: #fff;
+            border-color: #ab8965;
+            box-shadow: 0 4px 10px rgba(171, 137, 101, 0.2);
+        }
+
+        .reel-item-card {
+            transition: all 0.4s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <a href="#" id="back-to-top"></a>
+
+        <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+
+        <!-- header begin -->
+        <header class="transparent has-topbar">
+            <div id="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="d-flex justify-content-between xs-hide">
+                                <div class="header-widget d-flex">
+                                    <div class="topbar-widget"><a href="#"><i class="icofont-location-pin"></i>Özel
+                                            Güzelyalı Hastanesi, Adana</a></div>
+                                    <div class="topbar-widget"><a href="tel:03227707070"><i
+                                                class="icofont-phone"></i>0322 770 70 70</a></div>
+                                </div>
+                                <div class="social-icons">
+                                    <a href="https://www.instagram.com/op.dr.perigcrunal/" target="_blank"><i
+                                            class="fa-brands fa-instagram fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/">
+                                        <img class="logo-main" src="images/logo-white.png" alt="">
+                                        <img class="logo-scroll" src="images/logo-white.png" alt="">
+                                        <img class="logo-mobile" src="images/logo-white.png" alt="">
+                                    </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                    <li><a class="menu-item" href="/">Ana Sayfa</a></li>
+                                    <li><a class="menu-item" href="hakkimda">Hakkımda</a></li>
+                                    <li><a class="menu-item" href="uzmanlik">Uzmanlık Alanlarım</a></li>
+                                    <li><a class="menu-item" href="iletisim">İletişim</a></li>
+                                    <li><a class="menu-item" href="blog">Blog</a></li>
+                                    <li><a class="menu-item" href="videolar">Videolar</a></li>
+                                </ul>
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="menu_side_area">
+                                    <a href="tel:03227707070" class="btn-main btn-line">Randevu Al</a>
+                                    <span id="menu-btn"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+
+            <div id="top"></div>
+
+            <section id="subheader" class="relative jarallax text-light">
+                <img src="images/background/blogbg.jpg" class="jarallax-img" alt="">
+                <div class="container relative z-index-1000">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>Bilgilendirici Videolar</h1>
+                            <p class="lead mt-3">Op. Dr. Perihan Göçer Ünal'ın Instagram reels paylaşımları ve güncel
+                                video rehberleri.</p>
+                            <ul class="crumb">
+                                <li><a href="/">Ana Sayfa</a></li>
+                                <li class="active">Videolar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="de-overlay"></div>
+            </section>
+
+            <section class="lines-deco">
+                <!-- Filters Nav -->
+                <div class="container">
+
+
+                    <!-- Video Grid -->
+                    <div class="row g-4" id="reels-grid">
+                        <!-- Card 1 (Jinekoloji) -->
+                        <div class="col-lg-4 col-md-6 reel-item-card" data-category="jinekoloji">
+                            <a href="https://www.instagram.com/p/DZP1VG8t7-5/" target="_blank" class="reel-post">
+                                <div class="reel-img-container">
+                                    <img src="images/vids/hediye.jpg" alt="HPV Aşısı">
+                                    <div class="reel-overlay">
+                                        <div class="reel-play-btn">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="reel-info">
+                                <span class="reel-tag">Kadın Sağlığı</span>
+                                <h4 class="reel-title"><a href="https://www.instagram.com/p/DZP1VG8t7-5/"
+                                        target="_blank" class="text-dark">Çocuğunuza Verebileceğiniz En Güzel Hediye:
+                                        HPV Aşısı</a></h4>
+                                <p class="reel-desc">Çocuğunuza verebileceğiniz en güzel hediye 🎁 HPV AŞISI 💉</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 (Jinekoloji) -->
+                        <div class="col-lg-4 col-md-6 reel-item-card" data-category="jinekoloji">
+                            <a href="https://www.instagram.com/p/DZCcqB4N89l/" target="_blank" class="reel-post">
+                                <div class="reel-img-container">
+                                    <img src="images/vids/acil_korunma.jpg" alt="En Acil Korunma Yöntemleri">
+                                    <div class="reel-overlay">
+                                        <div class="reel-play-btn">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="reel-info">
+                                <span class="reel-tag">Kadın Sağlığı</span>
+                                <h4 class="reel-title"><a href="https://www.instagram.com/p/DZCcqB4N89l/"
+                                        target="_blank" class="text-dark">En Acil Korunma Yöntemleri</a></h4>
+                                <p class="reel-desc">En Acil Korunma Yöntemleri 🚨</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 (Genital Estetik) -->
+                        <div class="col-lg-4 col-md-6 reel-item-card" data-category="estetik">
+                            <a href="https://www.instagram.com/p/DYg8dp4tTHO/" target="_blank" class="reel-post">
+                                <div class="reel-img-container">
+                                    <img src="images/vids/labio.jpg" alt="Genital Estetik Soru-Cevap">
+                                    <div class="reel-overlay">
+                                        <div class="reel-play-btn">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="reel-info">
+                                <span class="reel-tag">Genital Estetik</span>
+                                <h4 class="reel-title"><a href="https://www.instagram.com/p/DYg8dp4tTHO/"
+                                        target="_blank" class="text-dark">Genital Estetik Hızlı Soru-Cevap</a></h4>
+                                <p class="reel-desc">Hadi bakalım Estetik Hızlı Soru-Cevap gelsinnnnn💃🏼💃🏼💃🏼 en
+                                    merak edilenleri cevapladım. Sizin sorunuz varsa yorumlarda buluşalım🫶🌞🎉</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 (Jinekoloji) -->
+                        <div class="col-lg-4 col-md-6 reel-item-card" data-category="jinekoloji">
+                            <a href="https://www.instagram.com/p/DYRmAt2N2a-/" target="_blank" class="reel-post">
+                                <div class="reel-img-container">
+                                    <img src="images/vids/kiz_adet.jpg" alt="İlk Adet Dönemi">
+                                    <div class="reel-overlay">
+                                        <div class="reel-play-btn">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="reel-info">
+                                <span class="reel-tag">Kadın Sağlığı</span>
+                                <h4 class="reel-title"><a href="https://www.instagram.com/p/DYRmAt2N2a-/"
+                                        target="_blank" class="text-dark">Kızlarınız Adet Olduğunda Onları
+                                        Onurlandırdınız mı?</a></h4>
+                                <p class="reel-desc">Kızlarınız adet olduğunda onları onurlandırdınız mı ? 🙏🏽🌸</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 (Jinekoloji) -->
+                        <div class="col-lg-4 col-md-6 reel-item-card" data-category="jinekoloji">
+                            <a href="https://www.instagram.com/p/DYHR2JuN8Nb/" target="_blank" class="reel-post">
+                                <div class="reel-img-container">
+                                    <img src="images/vids/adet.jpg" alt="Adetliyken Ağrı Kesici İçmek">
+                                    <div class="reel-overlay">
+                                        <div class="reel-play-btn">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="reel-info">
+                                <span class="reel-tag">Kadın Sağlığı</span>
+                                <h4 class="reel-title"><a href="https://www.instagram.com/p/DYHR2JuN8Nb/"
+                                        target="_blank" class="text-dark">Adetliyken Ağrı Kesici İçmek Kanama Azaltır
+                                        mı?</a></h4>
+                                <p class="reel-desc">Adetliyken ağrı kesici içmiyorum çünkü kanamam azalıyor 😅 💊</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <!-- content close -->
+
+        <!-- footer begin -->
+        <footer class="text-light section-dark">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-12">
+                        <div class="d-lg-flex align-items-center justify-content-between text-center">
+                            <div>
+                                <h3 class="fs-20">Adres</h3>
+                                Özel Güzelyalı Hastanesi<br>
+                                Adana
+                            </div>
+                            <div>
+                                <img src="images/logo-white.png" class="w-200px" alt=""><br>
+                                <div class="social-icons mb-sm-30 mt-4">
+                                    <a href="https://www.instagram.com/op.dr.perigcrunal/" target="_blank"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="fs-20">İletişim</h3>
+                                T. 0322 770 70 70<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            Copyright 2026 - Op. Dr. Perihan Göçer Ünal
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    </div>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/custom-marquee.js"></script>
+    <script src="js/custom-swiper-1.js"></script>
+
+    <!-- Interactive Filtering Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Category Filter Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.reel-item-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Set active class
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    items.forEach(item => {
+                        // Reset style properties for smooth transition
+                        item.style.transition = 'all 0.3s ease-out';
+
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.85)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
