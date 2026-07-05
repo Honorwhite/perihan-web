@@ -3,15 +3,20 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
-# 1. index.html dosyasını ana dizine (/) yönlendir
+# 1. Force HTTPS ve WWW'den non-WWW'ye yönlendir
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://opdrperihangocerunal.com/$1 [R=301,L]
+
+# 2. index.html dosyasını ana dizine (/) yönlendir
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
 RewriteRule ^index\.html$ / [R=301,L]
 
-# 2. .html uzantılı istekleri uzantısız hallerine yönlendir (Tarayıcıda gizleme)
+# 3. .html uzantılı istekleri uzantısız hallerine yönlendir (Tarayıcıda gizleme)
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP/
 RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 
-# 3. Uzantısız gelen istekleri arka planda .html dosyasına bağla
+# 4. Uzantısız gelen istekleri arka planda .html dosyasına bağla
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [L]
